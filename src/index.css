@@ -1,0 +1,37 @@
+div.scrollmenu {
+    background-color: #E0F7FA;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu div {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+.backgroundContainer {
+    background-color: #1D3557;
+}
+
+img {
+    height: 50%;
+    width: 50%;
+}
+
+body {
+    background-image: url('https://png.pngtree.com/png-clipart/20250105/original/pngtree-geometrictextured-seamless-pattern-of-pokeball-icon-symbol-in-vector-format-vector-png-image_9900398.png');
+    /* Reemplaza con el enlace de tu imagen */
+    background-color: antiquewhite;
+    background-repeat: repeat;
+    /* Repite la imagen en ambas direcciones */
+    background-size: 10%;
+    /* Mantén el tamaño original de la imagen para un patrón perfecto */
+    margin: 0;
+    /* Elimina márgenes del cuerpo */
+    padding: 0;
+    /* Elimina cualquier espacio adicional */
+    font-family: Arial, sans-serif;
+    /* Define una fuente básica y legible */
+}

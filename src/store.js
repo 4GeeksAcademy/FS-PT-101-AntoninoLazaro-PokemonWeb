@@ -1,5 +1,7 @@
-export const initialStore=()=>{
-  return{
+export const initialStore = () => {
+  return {
+    pokemon: null,
+    siglePokemonData: null,
     message: null,
     todos: [
       {
@@ -17,10 +19,21 @@ export const initialStore=()=>{
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
+  switch (action.type) {
+    case 'pokemon_data':
+      return {
+        ...store,
+        pokemon: action.payload
+      };
+
+    case 'sigle_pokemon_data':
+      return {
+        ...store,
+        siglePokemonData: action.payload
+      }
     case 'add_task':
 
-      const { id,  color } = action.payload
+      const { id, color } = action.payload
 
       return {
         ...store,
@@ -28,5 +41,5 @@ export default function storeReducer(store, action = {}) {
       };
     default:
       throw Error('Unknown action.');
-  }    
+  }
 }
