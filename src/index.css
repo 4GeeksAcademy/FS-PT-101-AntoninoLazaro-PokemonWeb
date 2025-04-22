@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'PokemonFont';
+    src: url('./assets/fonts/PokemonSolid.ttf') format('truetype');
+}
+
 div.scrollmenu {
     background-color: #E0F7FA;
     overflow: auto;
@@ -32,6 +37,40 @@ body {
     /* Elimina márgenes del cuerpo */
     padding: 0;
     /* Elimina cualquier espacio adicional */
-    font-family: Arial, sans-serif;
-    /* Define una fuente básica y legible */
 }
+
+.imagenNav{
+    max-width: 400px;
+}
+.imgDetails{
+    width: 40%;
+}
+.textPokemon {
+    font-family: 'PokemonFont', Arial, sans-serif; /* Fuente Pokémon con respaldo */
+    color: #ffff00; /* Color del texto */
+    text-shadow: 
+        2px 2px 0 #000,   /* Sombra inferior derecha */
+        -2px -2px 0 #000, /* Sombra superior izquierda */
+        2px -2px 0 #000,  /* Sombra superior derecha */
+        -2px 2px 0 #000;  /* Sombra inferior izquierda */
+    font-size: 2rem; /* Tamaño del texto */
+    border: 1px solid transparent; /* (Opcional) facilita depuración */
+    background-color: transparent; /* Fondo transparente */
+}
+.textPDetails{
+    font-size: large;
+    font-weight: bold;
+}
+
+.imgLocationCard {
+    max-width: 30%;
+
+}
+
+.cardLocation {
+    width: 20rem;
+}
+.pokeCard{
+    width: 20rem;
+}
+

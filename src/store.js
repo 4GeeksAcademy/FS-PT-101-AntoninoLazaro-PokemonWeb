@@ -1,7 +1,11 @@
 export const initialStore = () => {
   return {
+    region:null,
+    singleRegion:null,
+    singleLocation:null,
     pokemon: null,
     siglePokemonData: null,
+    location: null,
     message: null,
     todos: [
       {
@@ -20,6 +24,26 @@ export const initialStore = () => {
 
 export default function storeReducer(store, action = {}) {
   switch (action.type) {
+    case 'single_region':
+    return {
+      ...store,
+      singleRegion:action.payload
+    }
+    case 'region_data':
+    return {
+      ...store,
+      region:action.payload
+    }
+    case 'single_location':
+    return {
+      ...store,
+      singleLocation:action.payload
+    }
+    case 'location_data':
+      return {
+        ...store,
+        location: action.payload
+      }
     case 'pokemon_data':
       return {
         ...store,
