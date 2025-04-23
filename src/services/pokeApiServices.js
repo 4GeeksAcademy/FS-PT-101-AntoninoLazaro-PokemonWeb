@@ -41,7 +41,17 @@ pokeApiServices.getSingleLocationData = async (id) => {
         console.log(error);
     }
 }
-pokeApiServices.getAllRegion = async () =>{
+pokeApiServices.getDetailedPokemonData = async (id) => {
+    try {
+        const resp = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+        const data = await resp.json();
+        return data;
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+pokeApiServices.getAllRegion = async () => {
     try {
         const resp = await fetch(`https://pokeapi.co/api/v2/region`)
         const data = await resp.json();

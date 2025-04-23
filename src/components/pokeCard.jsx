@@ -18,7 +18,6 @@ export const PokeCard = ({ name, url }) => {
         if (!Array.isArray(store.fav_pokemon)) {
             throw new Error('store.fav_pokemon no es un array');
         }
-
         const found = store.fav_pokemon.some(pokemon => pokemon.name === name);
         return found ? 'text-warning' : 'text-dark';
     };

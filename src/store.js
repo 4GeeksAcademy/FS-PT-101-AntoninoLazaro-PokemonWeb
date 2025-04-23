@@ -8,6 +8,7 @@ export const initialStore = () => {
     siglePokemonData: null,
     location: null,
     message: null,
+    detailedPokemonData:null,
     todos: [
       {
         id: 1,
@@ -25,6 +26,11 @@ export const initialStore = () => {
 
 export default function storeReducer(store, action = {}) {
   switch (action.type) {
+    case 'detailed_pokemon_data':
+      return{
+        ...store,
+        detailedPokemonData:action.payload
+      }
     case 'remove_favorite':
       return {
         ...store,

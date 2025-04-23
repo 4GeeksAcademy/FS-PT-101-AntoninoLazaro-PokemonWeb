@@ -12,7 +12,7 @@ export const PokemonDetails = () => {
 
     useEffect(() => {
         pokeApiServices.getSinglePokemonData(id).then(data => dispatch({ type: 'sigle_pokemon_data', payload: data }))
-        console.log(store?.siglePokemonData);
+        pokeApiServices.getDetailedPokemonData(id).then(data => dispatch({ type: 'detailed_pokemon_data', payload: data }))
     }, [])
 
     return (
@@ -72,6 +72,19 @@ export const PokemonDetails = () => {
                         </div>
                     </div>
                     <div className="row">
+                        <div className="bg-secondary rounded p-2 border col mx-2">
+                            <p className="bg-light rounded p-1 mb-0">{store.detailedPokemonData?.flavor_text_entries[0].flavor_text}</p>
+                        </div>
+                    </div>
+                    <div className="row mt-3">
+                        <div className="col-6">
+                            <p className="fw-bold bg-light rounded p-1 mb-0">Happiness: {store.detailedPokemonData?.base_happiness}</p>
+                        </div>
+                        <div className="col-6">
+                            <p className="fw-bold bg-light rounded p-1 mb-0">Capture rate: {store.detailedPokemonData?.capture_rate}</p>
+                        </div>
+                    </div>
+                    <div className="row mt-3">
                         <div className="col-12">
                             <div className="bg-secondary rounded mb-3 p-3 border">
                                 <div className="row">
