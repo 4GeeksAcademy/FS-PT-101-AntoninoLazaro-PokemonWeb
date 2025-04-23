@@ -1,8 +1,9 @@
 export const initialStore = () => {
   return {
-    region:null,
-    singleRegion:null,
-    singleLocation:null,
+    fav_pokemon: [],
+    region: null,
+    singleRegion: null,
+    singleLocation: null,
     pokemon: null,
     siglePokemonData: null,
     location: null,
@@ -24,21 +25,26 @@ export const initialStore = () => {
 
 export default function storeReducer(store, action = {}) {
   switch (action.type) {
+    case 'remove_favorite':
+      return {
+        ...store,
+        fav_pokemon: store.fav_pokemon.filter(pokemon => pokemon.name !== action.payload)
+      };
     case 'single_region':
-    return {
-      ...store,
-      singleRegion:action.payload
-    }
+      return {
+        ...store,
+        singleRegion: action.payload
+      }
     case 'region_data':
-    return {
-      ...store,
-      region:action.payload
-    }
+      return {
+        ...store,
+        region: action.payload
+      }
     case 'single_location':
-    return {
-      ...store,
-      singleLocation:action.payload
-    }
+      return {
+        ...store,
+        singleLocation: action.payload
+      }
     case 'location_data':
       return {
         ...store,
@@ -47,9 +53,19 @@ export default function storeReducer(store, action = {}) {
     case 'pokemon_data':
       return {
         ...store,
-        pokemon: action.payload
+        pokemon: action.payload.map(pokemon => ({
+          ...pokemon,
+        }))
       };
-
+    case 'includes_fav_pokemon': {
+      const isAlreadyFav = store.fav_pokemon.some(pokemon => pokemon.name === action.payload.name); // se pone True si alguno coincide con la condición
+      return {
+        ...store,
+        fav_pokemon: isAlreadyFav
+          ? store.fav_pokemon.filter(pokemon => pokemon.name !== action.payload.name) // Lo elimina si ya está
+          : [...store.fav_pokemon, action.payload] // Lo agrega si no está
+      };
+    }
     case 'sigle_pokemon_data':
       return {
         ...store,

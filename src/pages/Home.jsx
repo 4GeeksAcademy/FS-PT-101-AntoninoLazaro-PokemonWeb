@@ -34,6 +34,14 @@ export const Home = () => {
 					</div>
 				</div>
 			</div>
+			{store.fav_pokemon.length > 0 && <div className="container mt-5 backgroundContainer pb-3 pt-1 text-center rounded">
+				<h1 className="textPokemon pb-2">YOUR FAVOURITE POKEMON</h1>
+				<div className="scrollmenu mx-5 border rounded text-center">
+					<div className="text-center mx-2">
+						{store.fav_pokemon?.map((el, i) => <PokeCard key={i} name={el.name} url={el.url} />)}
+					</div>
+				</div>
+			</div>}
 		</div>
 	);
 }; 

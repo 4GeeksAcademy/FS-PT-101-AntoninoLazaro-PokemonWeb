@@ -15,10 +15,8 @@ export const RegionDetails = () => {
 
     return (
         <div className="container-fluid my-5">
-            {/* Centra el panel con un ancho adaptativo */}
             <div className="row justify-content-center">
                 <div className="col-12 col-md-8 col-lg-6 bg-danger rounded border border-dark border-3">
-                    {/* Encabezado */}
                     <div className="row">
                         <div className="col-12 text-center py-3">
                             <h3 className="fw-bold d-inline">
@@ -26,10 +24,7 @@ export const RegionDetails = () => {
                             </h3>
                         </div>
                     </div>
-
-                    {/* Detalles generales: Imagen e info */}
                     <div className="row mx-auto">
-                        {/* Imagen */}
                         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center bg-secondary mb-3 rounded border">
                             <img
                                 className="imgDetails img-fluid"
@@ -37,7 +32,6 @@ export const RegionDetails = () => {
                                 alt=""
                             />
                         </div>
-                        {/* Info (height, weight, types) */}
                         <div className="col-12 col-md-6">
                             <div className="d-flex flex-column gap-3 pb-3">
                                 <p className="fw-bold bg-light rounded p-1 mb-1">

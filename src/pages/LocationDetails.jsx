@@ -10,7 +10,6 @@ export const LocationDetails = () => {
 
     useEffect(() => {
         pokeApiServices.getSingleLocationData(id).then(data => dispatch({ type: 'single_location', payload: data }))
-        console.log(store?.siglePokemonData);
     }, [])
     return (
         <div className="container-fluid my-5">
@@ -25,10 +24,7 @@ export const LocationDetails = () => {
                             </h3>
                         </div>
                     </div>
-
-                    {/* Detalles generales: Imagen e info */}
                     <div className="row mx-auto">
-                        {/* Imagen */}
                         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center bg-secondary mb-3 rounded border">
                             <img
                                 className="imgDetails img-fluid"
@@ -36,7 +32,6 @@ export const LocationDetails = () => {
                                 alt=""
                             />
                         </div>
-                        {/* Info (height, weight, types) */}
                         <div className="col-12 col-md-6">
                             <div className="d-flex flex-column gap-3 pb-3">
                                 <p className="fw-bold bg-light rounded p-1 mb-1">

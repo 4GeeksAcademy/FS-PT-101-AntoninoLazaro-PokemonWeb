@@ -13,7 +13,6 @@ export const RegionCard = ({ name, url }) => {
                 <p className="text-dark fw-bold m-0">{name.toUpperCase()}</p>
                 <div className="d-flex justify-content-around mt-2 pb-0">
                     <Link className="btn btn-primary" to={'/regiondetails/'+id}>Learn More!!</Link>
-                    <button>FAV</button>
                 </div>
             </div>
         </div>

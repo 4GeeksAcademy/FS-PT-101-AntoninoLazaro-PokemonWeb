@@ -32,10 +32,7 @@ export const PokemonDetails = () => {
                             </h3>
                         </div>
                     </div>
-
-                    {/* Detalles generales: Imagen e info */}
                     <div className="row mx-auto">
-                        {/* Imagen */}
                         <div className="col-12 col-md-6 d-flex justify-content-center align-items-center bg-secondary mb-3 rounded border">
                             <img
                                 className="imgDetails img-fluid"
@@ -43,13 +40,12 @@ export const PokemonDetails = () => {
                                 alt=""
                             />
                         </div>
-                        {/* Info (height, weight, types) */}
                         <div className="col-12 col-md-6">
                             <div className="d-flex flex-column gap-3 pb-3">
-                                <p className="fw-bold bg-light rounded p-1">
+                                <p className="fw-bold bg-light rounded p-1 mb-0">
                                     {`Height: ${store.siglePokemonData?.height}`}
                                 </p>
-                                <p className="fw-bold bg-light rounded p-1">
+                                <p className="fw-bold bg-light rounded p-1 mb-0">
                                     {`Weight: ${store.siglePokemonData?.weight}`}
                                 </p>
                                 <div className="fw-bold bg-light rounded p-1">
@@ -62,10 +58,19 @@ export const PokemonDetails = () => {
                                         ))}
                                     </div>
                                 </div>
+                                <div className="fw-bold bg-light rounded p-1">
+                                    <p className="mb-1">Abilities:</p>
+                                    <div className="d-flex flex-wrap gap-4 justify-content-center">
+                                        {store.siglePokemonData?.abilities?.map((tipo, index) => (
+                                            <span key={index} className="badge bg-info">
+                                                {tipo.ability.name}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {/* Stats */}
                     <div className="row">
                         <div className="col-12">
                             <div className="bg-secondary rounded mb-3 p-3 border">

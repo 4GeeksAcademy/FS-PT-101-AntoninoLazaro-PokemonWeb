@@ -13,7 +13,6 @@ export const LocationCard = ({ name, url }) => {
                 <p className="text-dark fw-bold m-0 my-3">{name.toUpperCase()}</p>
                 <div className="d-flex justify-content-around mt-2 p-0 pt-2">
                     <Link className="btn btn-primary" to={'/locationdetails/' + id}>Learn More!!</Link>
-                    <button>FAV</button>
                 </div>
             </div>
         </div>
