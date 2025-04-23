@@ -26,6 +26,7 @@ export const Navbar = () => {
 						See favourites
 					</button>
 					<ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<p className="mx-2 p-1 bg-light rounded fw-bold">Amount: {store.fav_pokemon.length}</p>
 						{store.fav_pokemon?.map((el, index) => (
 							<li key={index} className="d-flex justify-content-start  align-items-center p-1"><span className="fa-solid fa-star ms-2 text-yellow text-warning"></span>
 								<span className="mx-1">{el.name}</span>
