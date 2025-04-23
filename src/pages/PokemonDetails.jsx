@@ -43,6 +43,9 @@ export const PokemonDetails = () => {
                         <div className="col-12 col-md-6">
                             <div className="d-flex flex-column gap-3 pb-3">
                                 <p className="fw-bold bg-light rounded p-1 mb-0">
+                                    {`Habitat: ${store.detailedPokemonData?.habitat.name}`}
+                                </p>
+                                <p className="fw-bold bg-light rounded p-1 mb-0">
                                     {`Height: ${store.siglePokemonData?.height}`}
                                 </p>
                                 <p className="fw-bold bg-light rounded p-1 mb-0">
